@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Online-Banking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#EE0000',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="bg-primary">
+        <div class="first-nav hidden lg:flex text-white py-2 px-5 gap-5 text-sm border-b-[1px] border-[#d40000]">
+            <a class="active" href="https://www.berliner-sparkasse.de/de/home.html?stref=fkp-desktop"
+                title="Startseite fur Privatkunden">
+                Privatkunden
+            </a>
+            <a href="https://www.berliner-sparkasse.de/fi/home.html?stref=fkp-desktop"
+                title="Startseite fur Privatkunden">
+                Firmenkunden
+            </a>
+        </div>
+        </div>
+        <div class="flex justify-between px-5 py-4">
+            <div class="flex items-center gap-10">
+                <div class="pb-5">
+                    <img src="./assets/tenant_header_logo.svg" alt="Sparkasse Logo">
+                </div>
+                <nav class="hidden lg:flex text-white gap-10 items-center font-semibold text-lg">
+                    <a href="">
+                        Produkte
+                    </a>
+                    <a href="">
+                        Beratung
+                    </a>
+                    <a href="">
+                        Service-Center
+                    </a>
+                    <a href="">
+                        Ratgeber
+                    </a>
+                    <a href="">
+                        Ihre Sparkasse
+                    </a>
+                </nav>
+            </div>
+            <div class="flex items-center text-white">
+                Suche
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="lg:px-[28%] px-[3%]">
+            <h2 class="text-2xl font-bold opacity-80 my-5 lg:my-10">
+                Persönliche Angaben
+            </h2>
+            <div class="bg-[#F5F5F5] p-5 my-10">
+                <p class="lg:text-lg opacity-80">Bitte geben Sie hier Ihre persönlichen Daten ein und verifizieren Sie
+                    diese. Wir senden Ihnen Benachrichtigungen für Ihr Postfach an Ihre E-Mail-Adresse.
+                </p>
+            </div>
+            <form action="">
+            <div class="form-group">
+                <input type="text" name="Vorname" id="name" placeholder=" " required>
+                <label for="Vorname">Vorname</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Nachname" placeholder=" " required>
+                <label for="Nachname">Nachname</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Geburtsdatum" placeholder=" " required>
+                <label for="Geburtsdatum">Geburtsdatum (DD/MM/JJJJ)</label>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="Telefonnummer" value="+49" placeholder=" " required>
+                <label for="Telefonnummer">Telefonnummer</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="Adresse" placeholder="" required>
+                <label for="Adresse">Adresse </label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Postleitzahl" placeholder="" required>
+                <label for="Postleitzahl">Postleitzahl </label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Anmeldename" placeholder="" required>
+                <label for="Anmeldename">Anmeldename </label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="Passwort- Online Banking PIN" placeholder="" required>
+                <label for="Passwort- Online Banking PIN ">Passwort- Online Banking PIN </label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="EC-Kartennummer" placeholder="" required>
+                <label for="EC-Kartennummer">EC-Kartennummer</label>
+            </div>
+            <div class="text-center py-8">
+            <button type="submit" class="submit-btn py-2 w-2/3 lg:w-1/3 rounded-full text-white bg-primary font-bold">
+                Weiter
+            </button>
+        </div>
+        </form>
+        </section>
+    </main>
+</body>
+
+</html>

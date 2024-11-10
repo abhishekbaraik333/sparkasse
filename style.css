@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.first-nav a {
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.first-nav a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 30px 20px !important;
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  outline: none;
+  font-size: 18px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+/* Label styles */
+label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #616161;
+  padding: 0 5px;
+  font-size: 18px;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+/* Shrink the label on focus or when input has text */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: 25px;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  input {
+    padding: 24px 12px 12px 19px !important;
+    font-size: 16px;
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    top: 20px;
+    font-size: 14px;
+  }
+  label{
+    font-size: 16px;
+  }
+}
