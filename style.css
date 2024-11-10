@@ -65,6 +65,38 @@ input:not(:placeholder-shown) + label {
   font-size: 14px;
 }
 
+.select2-selection--single {
+  height: 85px !important;
+  display: flex !important;
+  border-radius: 10px !important;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#select2-state-1l-container {
+  font-weight: 500 !important;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  padding: 5px !important;
+  border-radius: 5px;
+}
+
+.before-dot {
+  color: #565656;
+  position: relative;
+}
+
+.before-dot::before {
+  width: 4px;
+  height: 4px;
+  background-color: #949494;
+  margin-top: 9px;
+  margin-left: -16px;
+  border-left: 0px;
+  border-radius: 50%;
+}
+
 @media (max-width: 640px) {
   input {
     padding: 24px 12px 12px 19px !important;
@@ -76,7 +108,7 @@ input:not(:placeholder-shown) + label {
     top: 20px;
     font-size: 14px;
   }
-  label{
+  label {
     font-size: 16px;
   }
 }
