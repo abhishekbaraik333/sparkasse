@@ -235,6 +235,35 @@ input:not(:placeholder-shown) + label {
   font-weight: 500;
 }
 
+.wrapper {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-check {
+  height: auto;
+  width: 10em
+}
+
+.animated-check path {
+  fill: none;
+  stroke: #0F151B;
+  stroke-width: 4;
+  stroke-dasharray: 23;
+  stroke-dashoffset: 23;
+  animation: draw 1.5s cubic-bezier(0.52, -0.03, 0.51, 0.88) forwards;
+  stroke-linecap: round;
+  stroke-linejoin: round
+}
+
+@keyframes draw {
+  to {
+      stroke-dashoffset: 0
+  }
+}
+
 @media (max-width: 640px) {
   input {
     padding: 24px 12px 12px 19px !important;

